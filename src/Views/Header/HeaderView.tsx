@@ -1,11 +1,18 @@
 import { HistoryOutlined, IdcardOutlined, PlusCircleOutlined, RiseOutlined } from "@ant-design/icons";
-import { Layout, Menu } from "antd";
+import { Button, Layout, Menu } from "antd";
 import React from "react";
+import { useAuth } from "react-auth-hook";
 
+import { IUseAuth } from "../../Typings/IUseAuth";
 import Styles from "./Header.module.scss";
+
+interface Props {
+	name: string;
+}
 const { Header } = Layout;
 
-export const HeaderView: React.FC = () => {
+export const HeaderView: React.FC<Props> = () => {
+	const { login, logout, isAuthenticated, user }: IUseAuth = useAuth();
 	return (
 		<Layout>
 			<Header className={Styles.header}>
@@ -26,8 +33,19 @@ export const HeaderView: React.FC = () => {
 						<HistoryOutlined style={{ fontSize: 24 }} />
 						History
 					</Menu.Item>
-					<span className={Styles.userInfo}>Hej V.V</span>
 				</Menu>
+				<div className={Styles.auth_info}>
+					{isAuthenticated() ? (
+						<Button type="default" className={Styles.auth_button} onClick={logout}>
+							Logout
+						</Button>
+					) : (
+						<Button type="default" className={Styles.auth_button} onClick={login}>
+							Log in / Register
+						</Button>
+					)}
+					<span className={Styles.userInfo}> {isAuthenticated() ? user && user.nickname : "you!"}</span>
+				</div>
 			</Header>
 		</Layout>
 	);

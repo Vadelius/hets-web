@@ -23,6 +23,19 @@ ul {
   color: $page-background !important;
 }
 
+.auth_button {
+  margin-top: 1px;
+  float: right;
+  height: 66px;
+  font-size: 24px;
+}
+
+.auth_info {
+  position: relative;
+  top: -67px;
+  margin-right: 15px;
+}
+
 .icon {
     font-size: 24px;
 }
