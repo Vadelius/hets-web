@@ -1,0 +1,34 @@
+@import "../../index.scss"; // Variables
+
+.header {
+  position: "fixed";
+  z-index: 1;
+  width: 100%;
+  background: $page-background;
+  color: $page-background;
+  padding: 0 !important;
+}
+
+ul {
+  color: $page-background !important;
+}
+
+.menu {
+  width: 100%;
+  line-height: 64px;
+}
+
+.menu_item {
+  font-size: 24px;
+  color: $page-background !important;
+}
+
+.icon {
+    font-size: 24px;
+}
+
+.userInfo {
+    float: right;
+    font-size: 24px;
+    padding-right: 1em;
+}

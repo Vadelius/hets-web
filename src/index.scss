@@ -1,4 +1,7 @@
 // Variables & globals.
+
+@import '~antd/dist/antd.css';
+
 @font-face {
   font-family: "Montserrat", sans-serif;
   font-style: normal;
@@ -16,6 +19,7 @@ $p4: #8e44ad;
   position: absolute;
   width: inherit;
   height: inherit;
+  padding: 5% 15%;
 }
 
 body,
