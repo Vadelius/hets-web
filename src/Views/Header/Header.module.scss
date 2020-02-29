@@ -9,6 +9,11 @@
   padding: 0 !important;
 }
 
+.app_content {
+  border: 1px solid white;
+  min-height: 280px;
+  padding: 1em;
+}
 ul {
   color: $page-background !important;
 }
@@ -26,7 +31,7 @@ ul {
 .auth_button {
   margin-top: 1px;
   float: right;
-  height: 66px;
+  height: 64px;
   font-size: 24px;
 }
 
@@ -37,11 +42,11 @@ ul {
 }
 
 .icon {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .userInfo {
-    float: right;
-    font-size: 24px;
-    padding-right: 1em;
+  float: right;
+  font-size: 24px;
+  padding-right: 1em;
 }

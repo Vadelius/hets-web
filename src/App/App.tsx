@@ -2,9 +2,7 @@
 import { RouteComponentProps } from "@reach/router";
 import React from "react";
 
-/* Views */
 import { HeaderView } from "../Views/Header";
-
 interface IRouterProps extends RouteComponentProps {
 	default: boolean;
 }
