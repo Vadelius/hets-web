@@ -1,0 +1,14 @@
+overwrite: true
+schema: 'https://hetsreact.herokuapp.com/v1/graphql'
+documents: 'src/Graphql/**/*.graphql'
+generates:
+  src/Generated/graphql.tsx:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+    config:
+      reactApolloVersion: 2
+      withHooks: true
+      withComponent: false
+      withHOC: false

@@ -1,0 +1,13 @@
+query Users {
+  user {
+    active
+    created_at
+    device_id
+    email
+    id
+    oauth_subject
+    points
+    updated_at
+    username
+  }
+}

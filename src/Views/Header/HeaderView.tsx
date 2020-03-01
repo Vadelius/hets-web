@@ -47,11 +47,11 @@ export const HeaderView: React.FC<Props> = () => {
 				</Menu>
 				<div className={Styles.auth_info}>
 					{isAuthenticated() ? (
-						<Button type="default" className={Styles.auth_button} onClick={logout}>
+						<Button type="primary" className={Styles.auth_button} onClick={logout}>
 							Logout
 						</Button>
 					) : (
-						<Button type="default" className={Styles.auth_button} onClick={login}>
+						<Button type="primary" className={Styles.auth_button} onClick={login}>
 							Log in / Register
 						</Button>
 					)}
