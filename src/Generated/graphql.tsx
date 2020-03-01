@@ -438,6 +438,39 @@ export type Uuid_Comparison_Exp = {
 	_nin?: Maybe<Array<Scalars["uuid"]>>;
 };
 
+export type CreateUserMutationVariables = {
+	id?: Maybe<Scalars["uuid"]>;
+	username?: Maybe<Scalars["String"]>;
+	email?: Maybe<Scalars["String"]>;
+	oauth_subject?: Maybe<Scalars["String"]>;
+};
+
+export type CreateUserMutation = { __typename?: "mutation_root" } & {
+	insert_user: Maybe<
+		{ __typename?: "user_mutation_response" } & {
+			returning: Array<
+				{ __typename?: "user" } & Pick<
+					User,
+					"active" | "created_at" | "device_id" | "email" | "id" | "oauth_subject" | "points" | "updated_at" | "username"
+				>
+			>;
+		}
+	>;
+};
+
+export type GetOneUserQueryVariables = {
+	id: Scalars["uuid"];
+};
+
+export type GetOneUserQuery = { __typename?: "query_root" } & {
+	user_by_pk: Maybe<
+		{ __typename: "user" } & Pick<
+			User,
+			"id" | "username" | "active" | "created_at" | "device_id" | "email" | "oauth_subject" | "points" | "updated_at"
+		>
+	>;
+};
+
 export type UsersQueryVariables = {};
 
 export type UsersQuery = { __typename?: "query_root" } & {
@@ -449,6 +482,97 @@ export type UsersQuery = { __typename?: "query_root" } & {
 	>;
 };
 
+export const CreateUserDocument = gql`
+	mutation createUser($id: uuid, $username: String, $email: String, $oauth_subject: String) {
+		insert_user(objects: { id: $id, username: $username, email: $email, oauth_subject: $oauth_subject }) {
+			returning {
+				active
+				created_at
+				device_id
+				email
+				id
+				oauth_subject
+				points
+				updated_at
+				username
+			}
+		}
+	}
+`;
+export type CreateUserMutationFn = ApolloReactCommon.MutationFunction<CreateUserMutation, CreateUserMutationVariables>;
+
+/**
+ * __useCreateUserMutation__
+ *
+ * To run a mutation, you first call `useCreateUserMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useCreateUserMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [createUserMutation, { data, loading, error }] = useCreateUserMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      username: // value for 'username'
+ *      email: // value for 'email'
+ *      oauth_subject: // value for 'oauth_subject'
+ *   },
+ * });
+ */
+export function useCreateUserMutation(
+	baseOptions?: ApolloReactHooks.MutationHookOptions<CreateUserMutation, CreateUserMutationVariables>,
+) {
+	return ApolloReactHooks.useMutation<CreateUserMutation, CreateUserMutationVariables>(CreateUserDocument, baseOptions);
+}
+export type CreateUserMutationHookResult = ReturnType<typeof useCreateUserMutation>;
+export type CreateUserMutationResult = ApolloReactCommon.MutationResult<CreateUserMutation>;
+export type CreateUserMutationOptions = ApolloReactCommon.BaseMutationOptions<CreateUserMutation, CreateUserMutationVariables>;
+export const GetOneUserDocument = gql`
+	query getOneUser($id: uuid!) {
+		user_by_pk(id: $id) {
+			__typename
+			id
+			username
+			active
+			created_at
+			device_id
+			email
+			oauth_subject
+			points
+			updated_at
+		}
+	}
+`;
+
+/**
+ * __useGetOneUserQuery__
+ *
+ * To run a query within a React component, call `useGetOneUserQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetOneUserQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetOneUserQuery({
+ *   variables: {
+ *      id: // value for 'id'
+ *   },
+ * });
+ */
+export function useGetOneUserQuery(baseOptions?: ApolloReactHooks.QueryHookOptions<GetOneUserQuery, GetOneUserQueryVariables>) {
+	return ApolloReactHooks.useQuery<GetOneUserQuery, GetOneUserQueryVariables>(GetOneUserDocument, baseOptions);
+}
+export function useGetOneUserLazyQuery(
+	baseOptions?: ApolloReactHooks.LazyQueryHookOptions<GetOneUserQuery, GetOneUserQueryVariables>,
+) {
+	return ApolloReactHooks.useLazyQuery<GetOneUserQuery, GetOneUserQueryVariables>(GetOneUserDocument, baseOptions);
+}
+export type GetOneUserQueryHookResult = ReturnType<typeof useGetOneUserQuery>;
+export type GetOneUserLazyQueryHookResult = ReturnType<typeof useGetOneUserLazyQuery>;
+export type GetOneUserQueryResult = ApolloReactCommon.QueryResult<GetOneUserQuery, GetOneUserQueryVariables>;
 export const UsersDocument = gql`
 	query Users {
 		user {

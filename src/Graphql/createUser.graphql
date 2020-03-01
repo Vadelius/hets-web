@@ -1,0 +1,15 @@
+mutation createUser($id: uuid, $username: String, $email: String, $oauth_subject: String) {
+  insert_user(objects: {id: $id, username: $username, email: $email, oauth_subject: $oauth_subject}) {
+    returning {
+      active
+      created_at
+      device_id
+      email
+      id
+      oauth_subject
+      points
+      updated_at
+      username
+    }
+  }
+}

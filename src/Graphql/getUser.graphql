@@ -1,0 +1,14 @@
+query getOneUser($id: uuid!) {
+  user_by_pk(id: $id) {
+    __typename
+    id
+    username
+    active
+    created_at
+    device_id
+    email
+    oauth_subject
+    points
+    updated_at
+  }
+}
