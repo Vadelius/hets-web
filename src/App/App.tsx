@@ -7,6 +7,7 @@ import React from "react";
 import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 
+/* Views */
 import { ActivityView } from "../Views/Activity";
 import { HeaderView } from "../Views/Header";
 import { HistoryView } from "../Views/History";
