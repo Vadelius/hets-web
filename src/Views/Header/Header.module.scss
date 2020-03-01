@@ -1,19 +1,5 @@
 @import "../../index.scss"; // Variables
 
-.header {
-  position: "fixed";
-  z-index: 1;
-  width: 100%;
-  background: $page-background;
-  color: $page-background;
-  padding: 0 !important;
-}
-
-.app_content {
-  min-height: 400px;
-  background-color: #fff;
-  padding: 1em;
-}
 ul {
   color: $page-background !important;
 }
