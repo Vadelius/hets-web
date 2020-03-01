@@ -84,7 +84,7 @@ module.exports = {
                 '@typescript-eslint/consistent-type-assertions': 'error' /* Enforces consistent usage of type assertions. */,
                 '@typescript-eslint/consistent-type-definitions': 'error' /* Consistent with type definition either interface or type */,
                 '@typescript-eslint/explicit-function-return-type': 'off' /* Require explicit return types on functions and class methods */,
-                '@typescript-eslint/explicit-member-accessibility': 'error' /* Require explicit accessibility modifiers on class properties and methods */,
+                '@typescript-eslint/explicit-member-accessibility': 'off' /* Require explicit accessibility modifiers on class properties and methods */,
                 '@typescript-eslint/func-call-spacing': 'error' /* Require or disallow spacing between function identifiers and their invocations */,
                 '@typescript-eslint/generic-type-naming': 'error' /* Enforces naming of generic type variables */,
                 '@typescript-eslint/interface-name-prefix': 'off' /* Require that interface names should or should not prefixed with I */,
@@ -98,7 +98,7 @@ module.exports = {
                 '@typescript-eslint/no-explicit-any': 'error' /* Disallow usage of the any type */,
                 '@typescript-eslint/no-extra-non-null-assertion': 'error' /* Disallow extra non-null assertion */,
                 '@typescript-eslint/no-extra-parens': 'error' /* Disallow unnecessary parentheses */,
-                '@typescript-eslint/no-extraneous-class': 'error' /* Forbids the use of classes as namespaces */,
+                '@typescript-eslint/no-extraneous-class': 'off' /* Forbids the use of classes as namespaces */,
                 '@typescript-eslint/no-floating-promises': 'error' /* Requires Promise-like values to be handled appropriately. */,
                 '@typescript-eslint/no-for-in-array': 'error' /* Disallow iterating over an array with a for-in loop */,
                 '@typescript-eslint/no-inferrable-types':

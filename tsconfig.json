@@ -10,6 +10,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
@@ -20,6 +21,7 @@
     "jsx": "react"
   },
   "include": [
-    "src"
-  ]
+    "src",
+    "api"
+  ],
 }
