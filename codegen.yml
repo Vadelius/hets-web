@@ -1,5 +1,5 @@
 overwrite: true
-schema: 'https://hetsreact.herokuapp.com/v1/graphql'
+schema: 'http://localhost:3000/graphql'
 documents: 'src/Graphql/**/*.graphql'
 generates:
   src/Generated/graphql.tsx:

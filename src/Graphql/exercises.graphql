@@ -1,0 +1,10 @@
+query exercises {
+    exercises {
+        id
+        created
+        createdBy
+        description
+        multiplier
+        verified
+    }
+}

@@ -17,17 +17,17 @@ export const HeaderView: React.FC<Props> = () => {
 	return (
 		<>
 			<Menu theme="light" mode="horizontal" defaultSelectedKeys={["1"]} className={Styles.menu}>
-				<Menu.Item disabled={!isAuthenticated()} className={Styles.menu_item} key="1">
+				<Menu.Item className={Styles.menu_item} key="1">
 					<IdcardOutlined style={{ fontSize: 24 }} />
 					Profile
 					<Link to="/profile" />
 				</Menu.Item>
-				<Menu.Item disabled={!isAuthenticated()} className={Styles.menu_item} key="2">
+				<Menu.Item className={Styles.menu_item} key="2">
 					<PlusCircleOutlined style={{ fontSize: 24 }} />
 					New activity
 					<Link to="/activity" />
 				</Menu.Item>
-				<Menu.Item disabled={!isAuthenticated()} className={Styles.menu_item} key="3">
+				<Menu.Item className={Styles.menu_item} key="3">
 					<HistoryOutlined style={{ fontSize: 24 }} />
 					History
 					<Link to="/history" />

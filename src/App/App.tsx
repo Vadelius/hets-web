@@ -14,6 +14,8 @@ import { HistoryView } from "../Views/History";
 import { LeaderboardView } from "../Views/Leaderboard";
 import { ProfileView } from "../Views/Profile";
 import Styles from "./App.module.scss";
+import {IUseAuth} from "../Typings/IUseAuth";
+import {useAuth} from "react-auth-hook";
 interface IRouterProps extends RouteComponentProps {
 	default: boolean;
 }
@@ -25,9 +27,24 @@ const client = new ApolloClient({
 
 /* App */
 export const App: React.FC<IRouterProps> = () => {
+	const { isAuthenticated, user }: IUseAuth = useAuth();
 	React.useEffect(() => {
 		localStorage.setItem("ORIGIN", `${window.location.href.replace(window.location.origin, "")}`);
 	}, []);
+	React.useEffect(() => {
+		const request = {
+			method: "POST",
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({
+				nickname: user?.nickname,
+				email: user?.email,
+				sub: user?.sub,
+			})
+		};
+		fetch("http://localhost:3000/Task/getuserobject/", request)
+			.then(response => response.json())
+			.then(data => console.log(data));
+	}, [isAuthenticated(), user]);
 	const { Content, Header } = Layout;
 	return (
 		<BrowserRouter>

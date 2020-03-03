@@ -1,0 +1,9 @@
+query oneUser($id: String!) {
+  user(id: $id) {
+    id
+    username
+    points
+    email
+    created
+  }
+}

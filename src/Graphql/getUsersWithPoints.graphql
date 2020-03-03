@@ -1,0 +1,7 @@
+query GetUsersWithPoints {
+    users {
+        id
+        username
+        points
+    }
+}
