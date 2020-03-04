@@ -1,38 +1,10 @@
 @import "../../index.scss"; // Variables
 
-ul {
-  color: $page-background !important;
+.fixed__navbar {
+  margin: 0 auto;
+  width: 1000px;
 }
-
-.menu {
-  width: 100%;
-  line-height: 64px;
-}
-
-.menu_item {
-  font-size: 24px;
-  color: $page-background !important;
-}
-
-.auth_button {
-  margin-top: 1px;
-  float: right;
-  height: 66px;
-  font-size: 24px;
-}
-
-.auth_info {
-  position: relative;
-  top: -67px;
-  margin-right: 15px;
-}
-
-.icon {
-  font-size: 24px;
-}
-
-.userInfo {
-  float: right;
-  font-size: 24px;
-  padding-right: 1em;
+.menu__button {
+  margin-left: 5px;
+  margin-right: 5px;
 }

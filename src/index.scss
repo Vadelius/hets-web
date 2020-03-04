@@ -1,6 +1,10 @@
 // Variables & globals.
 
 @import '~antd/dist/antd.css';
+@import "~normalize.css";
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
+@import "~@blueprintjs/core/lib/scss/variables";
 
 @font-face {
   font-family: "Montserrat", sans-serif;
@@ -16,16 +20,19 @@ $p3: #2980b9;
 $p4: #8e44ad;
 
 #root {
-  position: absolute;
-  width: inherit;
-  height: inherit;
-  padding: 5% 15%;
+  position: relative;
+  width: 1000px;
+  top: 50%;
+  left: 50%;
+  margin-left: -500px;
+  transform: translate(0, -50%);
 }
 
 body,
 html {
   width: 100%;
   height: 100%;
+  position: relative;
   background-color: $page-background;
 }
 

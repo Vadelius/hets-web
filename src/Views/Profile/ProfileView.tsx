@@ -42,7 +42,7 @@ export const ProfileView: React.FC<Props> = () => {
                         <Descriptions.Item label="Name">{data?.user?.username}</Descriptions.Item>
                         <Descriptions.Item label="Registered">{data?.user?.created}</Descriptions.Item>
                         <Descriptions.Item label="Minutes exercised" span={2}>
-                            543534
+                            53534
                         </Descriptions.Item>
                         <Descriptions.Item label="Status">
                             <Badge status="success" text="Online"/>
