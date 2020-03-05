@@ -21,11 +21,8 @@ $p4: #8e44ad;
 
 #root {
   position: relative;
-  width: 1000px;
-  top: 50%;
-  left: 50%;
-  margin-left: -500px;
-  transform: translate(0, -50%);
+  width: 100%;
+  margin: auto;
 }
 
 body,
@@ -34,8 +31,4 @@ html {
   height: 100%;
   position: relative;
   background-color: $page-background;
-}
-
-span, p {
-  font-size: 18px;
 }

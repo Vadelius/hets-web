@@ -20,10 +20,10 @@ export const HeaderView: React.FC<Props> = () => {
                 <Navbar.Group align={Alignment.LEFT}>
                     <Navbar.Heading>Hets</Navbar.Heading>
                     <Navbar.Divider/>
-                    <Button className={Styles.menu__button} icon="home" text={<Link to="/profile">Profile</Link>}/>
-                    <Button className={Styles.menu__button} icon="take-action" text={<Link to="/activity">Activity</Link>}/>
-                    <Button className={Styles.menu__button} icon="history" text={<Link to="/history">History</Link>}/>
-                    <Button className={Styles.menu__button} icon="satellite" text={<Link to="/leaderboard">Leaderboard</Link>}/>
+                    <Button className={Styles.menu__button} icon="home" text={<Link to="/profile" style={{color: "white"}}>Profile</Link>}/>
+                    <Button className={Styles.menu__button} icon="take-action" text={<Link to="/activity" style={{color: "white"}}>Activity</Link>}/>
+                    <Button className={Styles.menu__button} icon="history" text={<Link to="/history" style={{color: "white"}}>History</Link>}/>
+                    <Button className={Styles.menu__button} icon="satellite" text={<Link to="/leaderboard" style={{color: "white"}}>Leaderboard</Link>}/>
                     <Navbar.Divider/>
                     {isAuthenticated() ? (
                         <Button onClick={logout}>
